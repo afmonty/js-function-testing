@@ -10,10 +10,13 @@
 
 // 0. write your own forEach() that takes two arguments: an array, and a callback
 
-function forEach(array, callback){
-    // YOUR CODE HERE
-
+var nameList = ["Sengl", "Gandolf", "Loiosh", "Belgarion"];
+function greeting(){
+    nameList.forEach(function(name){
+        console.log("Howdy " + name); 
+    });
 }
+greeting(nameList);
 
 // testing your code with console.assert
 var total = 1;
@@ -104,4 +107,4 @@ function longest(){
 // .filter()
 
 // .map()
-Status API Training Shop Blog About Pricing
+//Status API Training Shop Blog About Pricing
