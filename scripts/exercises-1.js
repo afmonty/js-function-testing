@@ -27,13 +27,15 @@ function product(num1, num2, num3, num4) {
 
 // // 0. write your own forEach() that takes two arguments: an array, and a callback
 
-// var nameList = ["Sengl", "Gandolf", "Loiosh", "Belgarion"];
-// function greeting(){
-//     nameList.forEach(function(name){
-//         console.log("Howdy " + name); 
-//     });
-// }
-// greeting(nameList);
+ var nameList = ["Sengl", "Gandolf", "Loiosh", "Belgarion", "Sarah", "Anna", "Rob"];
+ var numList = [5, 3, 10, 7, 22, 1, 12, 16, 4, 47, 44];
+
+function greeting(){
+    nameList.forEach(function(name){
+        console.log("Howdy " + name); 
+    });
+}
+greeting(nameList);
 
 
 var nums = [1, 2, 3, 4];
@@ -125,7 +127,6 @@ function longest(){
         if (args[i].length > str) {
             var str = args[i].length;
             var longStr = args[i];
-            console.log(longStr);
 //     // .. do something with each element of args
         }
       } 
@@ -144,21 +145,20 @@ console.assert( longest("this", "is", "a", "awesome", "function") === "function"
  * 2. write a console.assert to test them
  */
 
- var nameList = ["Sengl", "Gandolf", "Loiosh", "Belgarion", "Sarah", "Anna", "Rob"];
- var numList = [5, 3, 10, 7, 22, 1, 12, 16, 4, 47, 44];
 
 //.sort()
-function toSort() {
-    var myNumList = [].sort.call(arguments);
-    console.log(myNumList);
-    return myNumList;
-}
-display(toSort(2, 4, 1, 3));
-//console.assert( myNumList[2] === 3); 
+//function toSort() {
+//     var myNumList = [].sort.call(arguments);
+//     console.log(myNumList);
+//     return myNumList;
+// }
+// display(toSort(2, 4, 1, 3));
+// console.log(myNumList[2]);
+// console.assert( myNumList[2] === 3); 
 
 
 // .concat()
-   var newArray = nameList.concat(numList); 
+var newArray = nameList.concat(numList); 
 console.log("All Hail " +newArray[3]);
 console.assert(newArray[3]) === "Belgarion";
 
@@ -190,21 +190,54 @@ console.assert(popped === "Rob");
 var pushed = nameList.push("Marianne");
 console.log(nameList);
 console.log("There are now "+ pushed+" names on my list");
-console.assert(nameList.indexOf("Marianne") === nameList.length-1)
+console.assert(nameList.indexOf("Marianne") === nameList.length-1);//fancy
 
 // .slice()
 var sliced = nameList.slice(4, 6);
-console.log(sliced[0] + " and " +sliced[1]+ " are the most important on this list.")
+console.log(sliced[0] + " and " +sliced[1]+ " are the most important on this list.");
 console.assert(sliced[0] === "Sarah");
 
 
 // .splice()
+var spliced = nameList.splice(2, 1, "Polgara");
+console.log("I am replacing "+ spliced + ".  He's a jhreg.");
+console.assert(nameList[2] === "Polgara");
 
 // .shift()
+var shifted = nameList.shift();
+console.log(shifted + " really is shifty.");
+console.assert(nameList[0] === "Gandolf");
 
 // .unshift()
+var unshifted = nameList.unshift("Sengl");
+console.log("Putting shifty " +nameList[0]+" back in front gives our array "+unshifted+" people again!");
+console.assert(unshifted === "isSilly".length);
 
 // .filter()
 
+function callBack(name) {
+    console.log("Calling Dr. "+name);
+    return name;
+};
+
+nameList.filter(callBack, "Sarah");
+
+console.assert( tired = true);
+
 // .map()
+function ugh(name) {
+    return "Not another function using "+name;
+}
+var moreNames = nameList.map(ugh);
+ugh(display(moreNames));
+console.assert(moreNames.length === nameList.length);
+
 // Status API Training Shop Blog About Pricing
+
+
+
+
+
+
+
+
